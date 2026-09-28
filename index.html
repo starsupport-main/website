@@ -736,7 +736,7 @@
         </a>
       </div>
 
-      <form class="contact-form" id="contact-form" action="mailto:support@starsupport.us" method="post" enctype="text/plain" novalidate>
+      <form class="contact-form" id="contact-form" action="mailto:info@starsupport.us" method="post" enctype="text/plain" novalidate>
         <h3>Request a free consultation</h3>
         <p class="hint">Tell us a little about your business and we'll get back to you within one business day.</p>
         <div class="form-grid">
@@ -811,7 +811,7 @@
     toggle.setAttribute('aria-label', 'Open menu');
   }));
 
-  // Contact form: compose an email to the support mailbox (ITflow turns it into a ticket)
+  // Contact form: compose an email to info@ with the visitor's details filled in
   const cf = document.getElementById('contact-form');
   cf.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -840,8 +840,8 @@
       '',
       '(Sent from the starsupport.us contact form)'
     ].join('\n');
-    window.location.href = 'mailto:support@starsupport.us?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    status.textContent = 'Your email app should open with your request ready to send. If it didn\'t, email support@starsupport.us or call (646) 946-0748.';
+    window.location.href = 'mailto:info@starsupport.us?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    status.textContent = 'Your email app should open with your request ready to send. If it didn\'t, email info@starsupport.us or call (646) 946-0748.';
   });
 
   // Scroll reveal — content stays visible if this never runs
