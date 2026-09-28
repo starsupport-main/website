@@ -383,7 +383,8 @@
   .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: 3px solid var(--sky); outline-offset: 1px; border-color: var(--sky); }
   .contact-form .btn { margin-top: 18px; width: 100%; justify-content: center; }
   .form-note { font-size: 13px; color: var(--on-dark-dim); margin-top: 12px; text-align: center; }
-  .form-status { font-size: 15px; color: var(--light-sky); margin-top: 12px; text-align: center; min-height: 1em; }
+  .form-status { font-size: 15px; color: var(--light-sky); margin-top: 12px; text-align: center; }
+  .form-status:empty { display: none; }
   @media (max-width: 600px) {
     .form-grid { grid-template-columns: 1fr; }
     .contact-form { padding: 22px 18px; }
@@ -762,7 +763,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </button>
         <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
-        <p class="form-note">Sending opens your email app with your request filled in. Something down right now? Call <a href="tel:+16469460748" style="color:var(--white);text-decoration:underline;white-space:nowrap">(646) 946-0748</a>.</p>
+        <p class="form-note" id="cf-note">Sending opens your email app with everything filled in.</p>
       </form>
 
       <div class="contact-grid">
@@ -842,7 +843,8 @@
       '(Sent from the starsupport.us contact form)'
     ].join('\n');
     window.location.href = 'mailto:info@starsupport.us?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    status.textContent = 'Your email app should open with your request ready to send. If it didn\'t, email info@starsupport.us or call (646) 946-0748.';
+    status.textContent = 'Opening your email app — just hit send.';
+    document.getElementById('cf-note').hidden = true;
   });
 
   // Scroll reveal — content stays visible if this never runs
