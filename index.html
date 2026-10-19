@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Star Support — IT &amp; POS in Hasbrouck Heights, Bergen County, NJ</title>
-<meta name="description" content="Star Support LLC in Hasbrouck Heights, Bergen County, NJ supports every major POS platform, plus managed IT, networking &amp; Wi-Fi, and website design and maintenance for hospitality venues and growing businesses across North Jersey and New York City. Reliable IT, on call — available 24/7/365." />
+<meta name="description" content="Star Support in Hasbrouck Heights, NJ: IT, POS &amp; network support for restaurants, hotels &amp; businesses across Bergen County and NYC. Available 24/7/365." />
 <link rel="canonical" href="https://www.starsupport.us/" />
 <meta name="theme-color" content="#0B3D6B" />
 
@@ -15,10 +15,11 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Star Support" />
-<meta property="og:title" content="Star Support — Reliable IT, on call" />
-<meta property="og:description" content="POS support · Managed IT · Networking · Websites for hospitality venues and growing businesses." />
+<meta property="og:title" content="Star Support — IT &amp; POS Support in Hasbrouck Heights, Bergen County, NJ" />
+<meta property="og:description" content="IT, POS &amp; network support from Hasbrouck Heights, NJ for restaurants, hotels &amp; businesses across Bergen County and NYC. Available 24/7/365." />
 <meta property="og:url" content="https://www.starsupport.us/" />
 <meta property="og:image" content="https://www.starsupport.us/assets/og-image.png" />
+<meta property="og:image:alt" content="Star Support logo: a blue star with an orbit ring and the words IT Support &amp; Services" />
 <meta name="twitter:card" content="summary_large_image" />
 
 <script type="application/ld+json">
@@ -47,13 +48,12 @@
   "areaServed": [
     { "@type": "State", "name": "New Jersey" },
     { "@type": "City", "name": "New York City" },
-    { "@type": "State", "name": "New York" },
     {
       "@type": "AdministrativeArea",
       "name": "Bergen County",
       "containedInPlace": { "@type": "State", "name": "New Jersey" }
     },
-    { "@type": "AdministrativeArea", "name": "North Jersey" },
+    { "@type": "Place", "name": "North Jersey" },
     { "@type": "City", "name": "Hasbrouck Heights" },
     { "@type": "City", "name": "Hackensack" },
     { "@type": "City", "name": "Teterboro" },
@@ -154,7 +154,23 @@
     background: transparent; border: 1px solid rgba(127, 208, 255, 0.3); color: var(--white);
     cursor: pointer; place-items: center;
   }
-  @media (max-width: 1139px) {
+  .brand-name, .nav-call { white-space: nowrap; }
+  .nav .brand, .nav-actions { flex-shrink: 0; }
+  /* 861–1099px: tighten the bar so all links, the wordmark and the phone button fit on one line */
+  @media (min-width: 861px) and (max-width: 1099px) {
+    .nav-inner { padding: 14px 20px; gap: 14px; }
+    .nav-links { gap: 14px; font-size: 13.5px; }
+    .nav .brand-sub { display: none; }
+    .nav .brand img { height: 34px; }
+    .nav .brand-name { font-size: 18px; }
+    .nav-call { padding: 10px 14px; font-size: 13.5px; }
+  }
+  @media (min-width: 861px) and (max-width: 999px) {
+    .nav-links { gap: 12px; font-size: 13px; }
+    .nav-call { padding: 10px 13px; }
+    .nav-call .call-num { display: none; }
+  }
+  @media (max-width: 860px) {
     .nav-inner { padding: 12px 20px; }
     .nav-toggle { display: grid; }
     .nav-links {
@@ -514,7 +530,6 @@
       <a href="#pos">POS Support</a>
       <a href="#who">Who We Help</a>
       <a href="#process">How We Work</a>
-      <a href="#why">Why Star Support</a>
       <a href="#service-area">Service Area</a>
       <a href="#contact">Contact</a>
     </div>
@@ -848,11 +863,13 @@
           WEB3FORMS_ACCESS_KEY
           Paste the access key from a free Web3Forms account (https://web3forms.com) created with info@starsupport.us.
           Leave the value as YOUR_ACCESS_KEY_HERE and the form keeps opening the visitor's email app.
+          This field and the botcheck box below have no name attribute on purpose, so they are never
+          included in the no-JavaScript email fallback. The script adds the key when it sends.
         -->
-        <input type="hidden" name="access_key" id="WEB3FORMS_ACCESS_KEY" value="YOUR_ACCESS_KEY_HERE">
+        <input type="hidden" id="WEB3FORMS_ACCESS_KEY" value="YOUR_ACCESS_KEY_HERE">
         <div class="hp" aria-hidden="true">
           <label for="cf-botcheck">Leave this blank</label>
-          <input type="checkbox" name="botcheck" id="cf-botcheck" tabindex="-1">
+          <input type="checkbox" id="cf-botcheck" tabindex="-1">
         </div>
         <h3>Request a free consultation</h3>
         <p class="hint">Tell us a little about your business and we'll get back to you within one business day.</p>
@@ -944,7 +961,7 @@
     return key.length > 0 && key !== WEB3FORMS_PLACEHOLDER;
   };
   if (web3formsReady()) {
-    cfNote.textContent = 'This form sends straight to Star Support. You can also call or email using the buttons above.';
+    cfNote.textContent = 'Submissions are handled by our form provider, Web3Forms, and sent straight to Star Support. You can also call or email using the buttons above.';
   }
   let cfSending = false;
   cf.addEventListener('submit', async (e) => {
@@ -996,7 +1013,6 @@
     cfStatus.textContent = 'Sending…';
     try {
       const payload = Object.fromEntries(new FormData(cf).entries());
-      delete payload.botcheck;
       payload.subject = subject;
       payload.access_key = web3formsKey();
       if (!payload.business) payload.business = '-';
