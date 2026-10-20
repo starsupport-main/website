@@ -866,21 +866,23 @@
           WEB3FORMS_ACCESS_KEY
           Paste the access key from a free Web3Forms account (https://web3forms.com) created with info@starsupport.us.
           Leave the value as YOUR_ACCESS_KEY_HERE and the form keeps opening the visitor's email app.
-          This field and the botcheck box below have no name attribute on purpose, so they are never
-          included in the no-JavaScript email fallback. The script adds the key when it sends.
+          This field, the botcheck box, and the honeypot below have no name attribute on purpose, so
+          they are never included in the no-JavaScript email fallback. The script adds the key when
+          it sends, and reads the honeypot by id when it copies a submission to the portal.
         -->
         <input type="hidden" id="WEB3FORMS_ACCESS_KEY" value="64b38028-87c8-4363-b13b-99a0cde8e3ad">
         <div class="hp" aria-hidden="true">
           <label for="cf-botcheck">Leave this blank</label>
           <input type="checkbox" id="cf-botcheck" tabindex="-1">
+          <input type="text" id="cf-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
         </div>
         <h3>Request a free consultation</h3>
         <p class="hint">Tell us a little about your business and we'll get back to you within one business day.</p>
         <div class="form-grid">
-          <div><label for="cf-name">Your name *</label><input id="cf-name" name="name" autocomplete="name" required></div>
-          <div><label for="cf-business">Business name</label><input id="cf-business" name="business" autocomplete="organization"></div>
-          <div><label for="cf-email">Email *</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
-          <div><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div><label for="cf-name">Your name *</label><input id="cf-name" name="name" autocomplete="name" maxlength="120" required></div>
+          <div><label for="cf-business">Business name</label><input id="cf-business" name="business" autocomplete="organization" maxlength="100"></div>
+          <div><label for="cf-email">Email *</label><input id="cf-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+          <div><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
           <div class="full"><label for="cf-service">What do you need help with?</label>
             <select id="cf-service" name="service">
               <option>POS support or setup</option>
@@ -892,7 +894,7 @@
               <option>Urgent issue — something is down</option>
               <option>Something else</option>
             </select></div>
-          <div class="full"><label for="cf-message">Message *</label><textarea id="cf-message" name="message" required placeholder="What's going on, and what systems do you use today?"></textarea></div>
+          <div class="full"><label for="cf-message">Message *</label><textarea id="cf-message" name="message" maxlength="4800" required placeholder="What's going on, and what systems do you use today?"></textarea></div>
         </div>
         <button type="submit" class="btn btn-sky">Send request
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -968,6 +970,31 @@
     cfNote.textContent = 'Submissions are handled by our form provider, Web3Forms, and sent straight to Star Support. You can also call or email using the buttons above.';
   }
   let cfSending = false;
+  // Set when the form is shown, not when the visitor clicks Send.
+  const leadFormLoadedAt = Date.now();
+  const sendLeadToPortal = () => {
+    try {
+      const business = document.getElementById('cf-business').value.trim();
+      const service = document.getElementById('cf-service').value.trim();
+      const honeypot = document.getElementById('cf-honeypot');
+      const payload = {
+        name: document.getElementById('cf-name').value.trim(),
+        email: document.getElementById('cf-email').value.trim(),
+        phone: document.getElementById('cf-phone').value.trim() || '',
+        message: 'Business: ' + business + '\nService: ' + service + '\n\n' + document.getElementById('cf-message').value.trim(),
+        source: 'website-contact',
+        honeypot: honeypot ? honeypot.value : '',
+        loadedAt: leadFormLoadedAt
+      };
+      // Copy into the portal. Failure here must not affect Web3Forms.
+      fetch('https://app.starsupport.us/api/leads/intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      }).catch(() => {});
+    } catch (err) {}
+  };
   cf.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (cfSending) return;
@@ -994,6 +1021,7 @@
       return;
     }
     const subject = 'Consultation request: ' + v('cf-service') + (v('cf-business') ? ' - ' + v('cf-business') : '');
+    sendLeadToPortal();
     if (!web3formsReady()) {
       const body = [
         'Name: ' + v('cf-name'),
