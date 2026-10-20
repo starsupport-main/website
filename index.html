@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Star Support — IT &amp; POS in Hasbrouck Heights, Bergen County, NJ</title>
-<meta name="description" content="Star Support in Hasbrouck Heights, NJ: IT, POS &amp; network support for restaurants, hotels &amp; businesses across Bergen County and NYC. Available 24/7/365." />
+<title>Star Support — Small Business IT Support in Hasbrouck Heights &amp; Bergen County, NJ</title>
+<meta name="description" content="Local IT support for small offices, retail shops and restaurants in Hasbrouck Heights, Bergen County &amp; NYC: help desk, email, Wi-Fi, backups, POS. Available 24/7/365." />
 <link rel="canonical" href="https://www.starsupport.us/" />
 <meta name="theme-color" content="#0B3D6B" />
 
@@ -15,8 +15,8 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Star Support" />
-<meta property="og:title" content="Star Support — IT &amp; POS Support in Hasbrouck Heights, Bergen County, NJ" />
-<meta property="og:description" content="IT, POS &amp; network support from Hasbrouck Heights, NJ for restaurants, hotels &amp; businesses across Bergen County and NYC. Available 24/7/365." />
+<meta property="og:title" content="Star Support — Small Business IT Support in Hasbrouck Heights, NJ" />
+<meta property="og:description" content="Local IT support for small offices, retail shops and restaurants in Hasbrouck Heights, Bergen County &amp; NYC: help desk, email, Wi-Fi, backups, POS. Available 24/7/365." />
 <meta property="og:url" content="https://www.starsupport.us/" />
 <meta property="og:image" content="https://www.starsupport.us/assets/og-image.png" />
 <meta property="og:image:alt" content="Star Support logo: a blue star with an orbit ring and the words IT Support &amp; Services" />
@@ -73,7 +73,20 @@
     { "@type": "City", "name": "Englewood" },
     { "@type": "City", "name": "Teaneck" }
   ],
-  "description": "Point-of-sale support for all major POS platforms, managed IT, networking & Wi-Fi, and website design and maintenance for hospitality venues and growing businesses.",
+  "description": "Small-business IT support for offices, retail shops and restaurants: help desk, Microsoft 365 and Google Workspace, networking and Wi-Fi, backups and security basics, hardware setup, POS support, and website design and maintenance.",
+  "knowsAbout": [
+    "Help desk and managed IT",
+    "Microsoft 365",
+    "Google Workspace",
+    "Business email",
+    "Networking and Wi-Fi",
+    "Backups, multi-factor authentication, and patching",
+    "Hardware setup",
+    "Point-of-sale support",
+    "Oracle Xstore",
+    "Aptos",
+    "Website design and maintenance"
+  ],
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -243,7 +256,7 @@
     font-size: clamp(44px, 7vw, 84px);
     line-height: 1.02;
     letter-spacing: -0.025em;
-    max-width: 13ch;
+    max-width: 14em;
     margin-bottom: 26px;
   }
   h1.hero-title span { color: var(--light-sky); }
@@ -255,6 +268,13 @@
   }
   .hero-sub strong { color: var(--white); font-weight: 700; }
   .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-note {
+    margin-top: 22px;
+    font-size: 15.5px;
+    color: var(--on-dark-dim);
+    max-width: 62ch;
+  }
+  .hero-note strong { color: var(--white); font-weight: 700; }
 
   .hero-stats {
     display: grid; grid-template-columns: repeat(3, 1fr);
@@ -305,7 +325,6 @@
     transition: border-color .2s, box-shadow .2s, transform .2s;
   }
   .service:hover { border-color: #b9d3ea; box-shadow: 0 16px 40px -24px rgba(11, 61, 107, 0.35); transform: translateY(-2px); }
-  .service.featured { border: 2px solid var(--star-blue); }
   .icon-tile {
     width: 50px; height: 50px; border-radius: 12px;
     background: #e6f0fa; color: var(--star-blue);
@@ -313,13 +332,8 @@
   }
   .icon-tile svg { width: 26px; height: 26px; }
   .service h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.01em; }
+  .service h3 a:hover { color: var(--star-blue); }
   .service p { font-size: 15px; line-height: 1.6; flex: 1; }
-  .service-tag {
-    display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--white); background: var(--star-blue);
-    padding: 5px 11px; border-radius: 999px; margin-top: 18px;
-  }
   @media (max-width: 960px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 620px) { .services-grid { grid-template-columns: 1fr; } }
 
@@ -348,13 +362,13 @@
   @media (max-width: 880px) { .pos-grid { grid-template-columns: 1fr; gap: 44px; } }
 
   /* ---------- WHO WE HELP ---------- */
-  .help-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .help-card { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 30px 30px 26px; }
   .help-card h3 { font-size: 19px; font-weight: 700; color: var(--star-blue); margin-bottom: 14px; }
   .help-card ul { list-style: none; }
   .help-card li { padding: 7px 0 7px 26px; position: relative; font-size: 16px; }
   .help-card li::before { content: '★'; position: absolute; left: 0; top: 7px; color: var(--sky); font-size: 14px; }
-  @media (max-width: 700px) { .help-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .help-grid { grid-template-columns: 1fr; } }
 
   /* ---------- SERVICE AREA ---------- */
   .area-list {
@@ -530,7 +544,6 @@
     </a>
     <div class="nav-links" id="nav-links">
       <a href="#services">Services</a>
-      <a href="#pos">POS Support</a>
       <a href="#who">Who We Help</a>
       <a href="#process">How We Work</a>
       <a href="#service-area">Service Area</a>
@@ -553,17 +566,19 @@
   <div class="hero-orbit" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <p class="eyebrow">Reliable IT, on call</p>
-    <h1 class="hero-title">IT and POS support <span>without the wait.</span></h1>
+    <h1 class="hero-title">Small-business IT support,<br><span>without the wait.</span></h1>
     <p class="hero-sub">
-      From <strong>your point-of-sale system</strong> to the network behind it and the website in front of it, Star Support delivers expert, responsive help for hospitality venues and growing businesses alike — one dependable partner for the specialized work and the everyday. Based in Hasbrouck Heights, we serve Bergen County, NJ, North Jersey, and New York City.
+      From the computers on your desks to the Wi-Fi, email and backups behind them, and the point-of-sale and website your customers see, Star Support is one local, dependable partner for <strong>offices, shops and restaurants</strong>. Based in Hasbrouck Heights, serving Bergen County, North Jersey and New York City.
     </p>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-sky">
         Request a free consultation
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
+      <a href="#contact" class="btn btn-outline-light">Book an IT Checkup</a>
       <a href="#services" class="btn btn-outline-light">See what we do</a>
     </div>
+    <p class="hero-note">Small Business IT Checkup: <strong>$149 flat</strong>, credited toward a first project or the first month of Essentials if booked within 30 days.</p>
 
     <div class="hero-stats">
       <div class="stat">
@@ -571,8 +586,8 @@
         <div class="stat-label">Available · 365 days a year</div>
       </div>
       <div class="stat">
-        <div class="stat-num">Any POS</div>
-        <div class="stat-label">Platform supported</div>
+        <div class="stat-num">One call</div>
+        <div class="stat-label">Covers it all</div>
       </div>
       <div class="stat">
         <div class="stat-num">8a<span>–</span>11p</div>
@@ -588,16 +603,21 @@
   <div class="wrap">
     <div class="section-head">
       <div class="section-tag">What we do</div>
-      <h2>POS · Managed IT · Networking · <span>Websites</span></h2>
-      <p>Most businesses juggle three or four vendors — one for POS, another for the network, someone else for email. We cover the specialized POS work most providers can't touch, the day-to-day technology your business depends on, and the website your customers see first.</p>
+      <h2>Help desk · Email · Networking · Security · POS · <span>Websites</span></h2>
+      <p>Most small businesses juggle three or four vendors — one for computers, another for the network, someone else for email, the POS and the website. We cover all of it, so you have one number to call.</p>
     </div>
 
     <div class="services-grid">
-      <div class="service featured">
-        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
-        <h3>POS Support &amp; Programming</h3>
-        <p>Installation, menu programming, configuration, upgrades, and troubleshooting for every major platform — Toast, Square, Clover, NCR Aloha, Lightspeed, Oracle Micros Simphony, and more. From single venues to multi-property rollouts.</p>
-        <span class="service-tag">★ Specialty</span>
+      <div class="service">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+        <h3>Help Desk &amp; Managed IT</h3>
+        <p>Remote and on-site help when something breaks or slows down: computers, printers, logins, and the everyday calls. Ongoing support plans, with monitoring and patching. One number, one answer. Available 24/7/365, with standard hours 8 AM to 11 PM ET every day.</p>
+      </div>
+
+      <div class="service">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h3>Microsoft 365, Google Workspace &amp; Business Email</h3>
+        <p>Professional email on your own domain, set up so mail lands in inboxes, not spam. Domains, DNS, and SSL, plus adding and removing users with clean access control.</p>
       </div>
 
       <div class="service">
@@ -607,39 +627,33 @@
       </div>
 
       <div class="service">
-        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
-        <h3>Managed IT Services</h3>
-        <p>Proactive monitoring, patching, and support plans — plus Microsoft 365, Google Workspace, and user onboarding and offboarding with MFA and clean access control.</p>
-      </div>
-
-      <div class="service">
-        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/><path d="M9 13l-2 2 2 2M15 13l2 2-2 2"/></svg></div>
-        <h3>Website Design &amp; Development</h3>
-        <p>Fast, mobile-friendly websites built to bring in customers — menus, online ordering and reservation links, contact forms, and local search basics so people can find you.</p>
-      </div>
-
-      <div class="service">
-        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/><path d="M12 8v4l2.5 1.5"/></svg></div>
-        <h3>Website Maintenance &amp; Hosting</h3>
-        <p>Updates, backups, security patches, uptime monitoring, and content changes handled for you — new menus, hours, photos, and specials posted without the wait.</p>
-      </div>
-
-      <div class="service">
-        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-        <h3>Domains &amp; Business Email</h3>
-        <p>Domain registration, DNS, and SSL certificates, plus professional email on Microsoft 365 or Google Workspace — set up correctly so your mail lands in inboxes, not spam.</p>
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>Security Basics: Backups, MFA &amp; Patching</h3>
+        <p>Backups that actually restore, multi-factor authentication on email and key accounts, and computers kept patched and up to date. The basics that stop most small-business headaches before they start.</p>
       </div>
 
       <div class="service">
         <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="12" rx="2"/><path d="M7 21h10M9 15l-1 6M15 15l1 6"/></svg></div>
         <h3>Hardware Supply &amp; Setup</h3>
-        <p>Sourcing, provisioning, and installing workstations, POS terminals, printers, switches, and peripherals — spec'd for what you actually need and ready to run.</p>
+        <p>Sourcing, provisioning, and installing workstations, laptops, printers, Wi-Fi gear, POS terminals, and peripherals — spec'd for what you actually need and ready to run.</p>
+      </div>
+
+      <div class="service">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3><a href="#pos">POS Support for Retail &amp; Restaurants</a></h3>
+        <p>Installation, programming, configuration, upgrades, and troubleshooting for Toast, Square, Clover, NCR Aloha, Lightspeed, Oracle Micros Simphony, plus retail platforms like Oracle Xstore and Aptos, and more. For retail counters and restaurants alike, from a single register to multiple locations and new store openings.</p>
+      </div>
+
+      <div class="service">
+        <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/><path d="M9 13l-2 2 2 2M15 13l2 2-2 2"/></svg></div>
+        <h3>Websites</h3>
+        <p>Fast, mobile-friendly websites with contact forms, booking and online ordering links, product or menu pages, and local search basics. Updates, backups, hosting, and content changes handled for you — new hours, photos, products, staff, and specials posted without the wait.</p>
       </div>
 
       <div class="service">
         <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <h3>Rapid Response Support</h3>
-        <p>Fast remote and on-site help when it matters most, including after-hours and holiday coverage for live service. Available 24/7/365.</p>
+        <p>Fast remote and on-site help when it matters most, including after-hours and holiday coverage when something can't wait. Available 24/7/365.</p>
       </div>
 
       <div class="service">
@@ -651,23 +665,61 @@
   </div>
 </section>
 
-<!-- POS DEEP DIVE -->
-<section id="pos">
+<!-- WHO WE HELP -->
+<section id="who">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-tag">Specialty · Point of Sale</div>
+      <div class="section-tag">Who we help</div>
+      <h2>Built for small business. <span>From the front office to the front counter.</span></h2>
+    </div>
+    <div class="help-grid">
+      <div class="help-card">
+        <h3>Offices</h3>
+        <ul>
+          <li>Dental &amp; medical practices</li>
+          <li>Law &amp; accounting firms</li>
+          <li>Insurance &amp; real estate offices</li>
+          <li>Small &amp; growing teams</li>
+        </ul>
+      </div>
+      <div class="help-card">
+        <h3>Retail</h3>
+        <ul>
+          <li>Shops &amp; boutiques</li>
+          <li>Salons, studios &amp; services</li>
+          <li>Multi-location retailers</li>
+          <li>Anyone with a counter and a card reader</li>
+        </ul>
+      </div>
+      <div class="help-card">
+        <h3>Restaurants &amp; hospitality</h3>
+        <ul>
+          <li>Restaurants, cafés &amp; bars</li>
+          <li>Hotels &amp; multi-outlet venues</li>
+          <li>Food &amp; beverage operations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POS DEEP DIVE -->
+<section id="pos" class="section-mist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Point of Sale · Retail &amp; Restaurants</div>
       <h2>Your POS, <span>configured the way it should have been from day one.</span></h2>
-      <p>Point-of-sale systems are powerful, intricate, and unforgiving — and most operators inherit a setup someone else built. Whatever platform you run, we come in, untangle it, and program your POS so it actually reflects how your business runs.</p>
+      <p>Point-of-sale systems are powerful, intricate, and unforgiving — and most businesses inherit a setup someone else built. Whatever platform you run, we come in, untangle it, and program your POS so it actually reflects how your business runs.</p>
     </div>
 
     <div class="pos-grid">
       <div class="pos-left">
         <h3>From the master record to the front line — we cover the whole programming surface.</h3>
-        <p>Whether you're opening a new venue, refreshing a menu, or finally fixing the printer routing nobody else could figure out, we handle it directly in your POS back office and walk your team through what changed.</p>
-        <p>Emergency POS support is available around the clock, including holidays — because hospitality doesn't stop, and neither do we.</p>
+        <p>Whether you're opening a new store or location, updating items and prices, or finally fixing the printer setup nobody else could figure out, we handle it directly in your POS back office and walk your team through what changed.</p>
+        <p>Emergency POS support is available around the clock, including holidays — because your customers don't wait, and neither do we.</p>
         <div class="callout">
           <h4>The POS difference</h4>
-          <p>Most general IT providers won't touch point-of-sale, and vendor support lines are often slow and costly. We support cloud platforms like Toast, Square, and Clover through to enterprise systems like Oracle Micros Simphony that few providers can program.</p>
+          <p>Most general IT providers won't touch point-of-sale, and vendor support lines are often slow and costly. We support cloud platforms like Toast, Square, and Clover through to enterprise systems like Oracle Micros Simphony that few providers can program, plus retail platforms like Oracle Xstore and Aptos. Raymond has supported Oracle Xstore and Aptos POS at Hugo Boss and The Vitamin Shoppe.</p>
         </div>
       </div>
 
@@ -675,22 +727,22 @@
         <li>
           <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h12"/><circle cx="20" cy="18" r="1.5" fill="currentColor"/></svg></div>
           <div>
-            <div class="label">Menu Item Maintenance</div>
-            <div class="desc">Items, pricing, modifiers, and category structures programmed correctly the first time.</div>
+            <div class="label">Item &amp; Price Maintenance</div>
+            <div class="desc">Items, pricing, variants/modifiers, and categories programmed correctly the first time.</div>
           </div>
         </li>
         <li>
           <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg></div>
           <div>
-            <div class="label">Printer Routing</div>
-            <div class="desc">Kitchen, bar, expo, receipt — every ticket lands where it should, every time.</div>
+            <div class="label">Printer &amp; Receipt Routing</div>
+            <div class="desc">Receipts, labels, kitchen and bar tickets, each landing where it should.</div>
           </div>
         </li>
         <li>
           <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
           <div>
             <div class="label">Screen &amp; Layout Design</div>
-            <div class="desc">Button layouts and order screens built around how your staff actually move through a shift.</div>
+            <div class="desc">Button layouts built around how your staff actually work.</div>
           </div>
         </li>
         <li>
@@ -703,41 +755,18 @@
         <li>
           <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 7l2 13h10l2-13"/><path d="M3 7h18M9 7V4a3 3 0 0 1 6 0v3"/></svg></div>
           <div>
-            <div class="label">Combos, Discounts &amp; Integrations</div>
-            <div class="desc">Combo meals, happy hours, and promotions, plus card terminals, online ordering, and delivery integrations that just work.</div>
+            <div class="label">Discounts, Promotions &amp; Integrations</div>
+            <div class="desc">Sales, loyalty, happy hours and combos, plus card terminals, e-commerce and online ordering, and delivery integrations.</div>
+          </div>
+        </li>
+        <li>
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 10l2-6h14l2 6"/><path d="M4 10h16v10H4z"/><path d="M9 20v-6h6v6"/></svg></div>
+          <div>
+            <div class="label">Store Openings &amp; Rollouts</div>
+            <div class="desc">POS and network installs, imaging and deployment, Zebra label printers, iPads and mobile devices.</div>
           </div>
         </li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- WHO WE HELP -->
-<section id="who" class="section-mist">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-tag">Who we help</div>
-      <h2>Built for hospitality. <span>Ready for any business.</span></h2>
-    </div>
-    <div class="help-grid">
-      <div class="help-card">
-        <h3>Hospitality</h3>
-        <ul>
-          <li>Hotels &amp; resorts</li>
-          <li>Restaurants &amp; bars</li>
-          <li>Rooftop &amp; multi-outlet venues</li>
-          <li>Food &amp; beverage operations</li>
-        </ul>
-      </div>
-      <div class="help-card">
-        <h3>Business IT</h3>
-        <ul>
-          <li>Small &amp; growing businesses</li>
-          <li>Multi-location operations</li>
-          <li>Offices &amp; retail</li>
-          <li>Anyone needing dependable IT</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
@@ -788,7 +817,7 @@
         </li>
         <li>
           <span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>
-          <div><strong>Hospitality-grade reliability</strong><span>We learned IT in environments where downtime costs money by the minute. That standard carries into every account.</span></div>
+          <div><strong>Built for businesses that can't afford downtime</strong><span>When the network, email or card reader goes down, it costs you money by the minute. We treat every account that way.</span></div>
         </li>
         <li>
           <span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>
@@ -819,7 +848,7 @@
     <div class="section-head">
       <div class="section-tag">Service area</div>
       <h2>Local to Hasbrouck Heights. <span>Serving Bergen County, NJ.</span></h2>
-      <p>Star Support is based in Hasbrouck Heights. We support hospitality venues and growing businesses in the Bergen County, NJ towns below, across North Jersey, and in New York City.</p>
+      <p>Star Support is based in Hasbrouck Heights. We support small offices, shops and restaurants in the Bergen County, NJ towns below, across North Jersey, and in New York City.</p>
     </div>
     <ul class="area-list" aria-label="Towns and areas we serve">
       <li class="area-home">Hasbrouck Heights</li>
@@ -849,7 +878,7 @@
     <div class="cta-box">
       <div class="section-tag">Let's talk</div>
       <h2>Tell us what's broken — <span>or what you want to build.</span></h2>
-      <p>Reach out for a free consultation. We'll listen first, recommend honestly, and only sign you on if we're confident we'll deliver.</p>
+      <p>Reach out for a free 30-minute consultation. We'll listen first, recommend honestly, and only sign you on if we're confident we'll deliver. The Small Business IT Checkup is $149 flat, credited toward a first project or the first month of Essentials if booked within 30 days.</p>
 
       <div class="cta-actions">
         <a href="tel:+16469460748" class="btn btn-sky">
