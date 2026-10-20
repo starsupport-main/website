@@ -79,6 +79,79 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://www.starsupport.us/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Star Support is based in Hasbrouck Heights. We support hospitality venues and growing businesses in the Bergen County, NJ towns of Hasbrouck Heights, Hackensack, Teterboro, Wood-Ridge, Lodi, Little Ferry, Moonachie, Rutherford, East Rutherford, Carlstadt, Lyndhurst, Paramus, Fort Lee, Englewood, and Teaneck, across North Jersey, and in New York City."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which POS systems do you support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We handle installation, menu programming, configuration, upgrades, and troubleshooting for every major platform — Toast, Square, Clover, NCR Aloha, Lightspeed, Oracle Micros Simphony, and more — from single venues to multi-property rollouts. Support covers cloud platforms like Toast, Square, and Clover through to enterprise systems like Oracle Micros Simphony."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you available after hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Rapid response support includes after-hours and holiday coverage for live service, and emergency POS support is available around the clock, including holidays. Star Support is available 24/7/365."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are your standard hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard hours are 8 AM – 11 PM ET, every day of the week. Star Support is also available 24/7/365, including holidays."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer on-site or remote support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Rapid response support is fast remote and on-site help when it matters most, including after-hours and holiday coverage for live service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with small businesses as well as restaurants and hotels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Star Support is built for hospitality and ready for any business. That includes hotels and resorts, restaurants and bars, rooftop and multi-outlet venues, and food and beverage operations, as well as small and growing businesses, multi-location operations, offices and retail, and anyone needing dependable IT."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Request a free consultation to map your current setup, pain points, and goals — no obligation. We'll tell you whether we're the right fit before you sign anything, even if the answer is no. Call (646) 946-0748, email info@starsupport.us, or use the contact form on this page. The form asks you to tell us a little about your business, and we'll get back to you within one business day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you build and maintain websites?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We build fast, mobile-friendly websites to bring in customers — menus, online ordering and reservation links, contact forms, and local search basics so people can find you. Website maintenance and hosting covers updates, backups, security patches, uptime monitoring, and content changes — new menus, hours, photos, and specials. We also handle domain registration, DNS, and SSL certificates, plus professional email on Microsoft 365 or Google Workspace."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
   :root {
@@ -423,6 +496,77 @@
   .why-card-meta { font-size: 12.5px; color: var(--on-dark-dim); letter-spacing: 0.18em; text-transform: uppercase; }
   @media (max-width: 920px) { .why-grid { grid-template-columns: 1fr; gap: 44px; } }
 
+  /* ---------- FAQ ---------- */
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .faq-item:hover, .faq-item[open] {
+    border-color: #b9d3ea;
+    box-shadow: 0 16px 40px -24px rgba(11, 61, 107, 0.35);
+  }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 24px;
+    min-height: 64px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::marker { content: ""; }
+  .faq-item summary h3 {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+  }
+  .faq-item summary::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    flex: 0 0 10px;
+    border-right: 2px solid var(--star-blue);
+    border-bottom: 2px solid var(--star-blue);
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform .2s;
+  }
+  .faq-item[open] summary { border-bottom: 1px solid var(--line); }
+  .faq-item[open] summary::after { transform: translateY(2px) rotate(225deg); }
+  .faq-item summary:hover h3 { color: var(--star-blue); }
+  .faq-item p {
+    margin: 0 24px 22px;
+    padding-top: 16px;
+    max-width: 75ch;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+  .faq-item a {
+    color: var(--star-blue);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .faq-item a:hover { color: var(--navy); }
+  @media (max-width: 600px) {
+    .faq-item summary { padding: 16px 18px; min-height: 56px; font-size: 16.5px; }
+    .faq-item p { margin: 0 18px 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-item summary::after { transition: none; }
+  }
+
   /* ---------- CONTACT ---------- */
   #contact {
     color: var(--on-dark); text-align: center;
@@ -531,6 +675,7 @@
       <a href="#who">Who We Help</a>
       <a href="#process">How We Work</a>
       <a href="#service-area">Service Area</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
@@ -840,6 +985,52 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="section-mist" aria-labelledby="faq-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">FAQ</div>
+      <h2 id="faq-heading">Common questions, <span>answered plainly.</span></h2>
+      <p>Service area, POS platforms, hours, on-site and remote help, and how to request a free consultation.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary><h3>What areas do you serve?</h3></summary>
+        <p>Star Support is based in Hasbrouck Heights. We support hospitality venues and growing businesses in the Bergen County, NJ towns of Hasbrouck Heights, Hackensack, Teterboro, Wood-Ridge, Lodi, Little Ferry, Moonachie, Rutherford, East Rutherford, Carlstadt, Lyndhurst, Paramus, Fort Lee, Englewood, and Teaneck, across North Jersey, and in New York City.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Which POS systems do you support?</h3></summary>
+        <p>We handle installation, menu programming, configuration, upgrades, and troubleshooting for every major platform — Toast, Square, Clover, NCR Aloha, Lightspeed, Oracle Micros Simphony, and more — from single venues to multi-property rollouts. Support covers cloud platforms like Toast, Square, and Clover through to enterprise systems like Oracle Micros Simphony.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Are you available after hours?</h3></summary>
+        <p>Yes. Rapid response support includes after-hours and holiday coverage for live service, and emergency POS support is available around the clock, including holidays. Star Support is available 24/7/365.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>What are your standard hours?</h3></summary>
+        <p>Standard hours are 8 AM – 11 PM ET, every day of the week. Star Support is also available 24/7/365, including holidays.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Do you offer on-site or remote support?</h3></summary>
+        <p>Both. Rapid response support is fast remote and on-site help when it matters most, including after-hours and holiday coverage for live service.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Do you work with small businesses as well as restaurants and hotels?</h3></summary>
+        <p>Yes. Star Support is built for hospitality and ready for any business. That includes hotels and resorts, restaurants and bars, rooftop and multi-outlet venues, and food and beverage operations, as well as small and growing businesses, multi-location operations, offices and retail, and anyone needing dependable IT.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>How do I get started?</h3></summary>
+        <p>Request a free consultation to map your current setup, pain points, and goals — no obligation. We'll tell you whether we're the right fit before you sign anything, even if the answer is no. Call <a href="tel:+16469460748">(646) 946-0748</a>, email <a href="mailto:info@starsupport.us">info@starsupport.us</a>, or use the <a href="#contact">contact form</a> on this page. The form asks you to tell us a little about your business, and we'll get back to you within one business day.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Do you build and maintain websites?</h3></summary>
+        <p>Yes. We build fast, mobile-friendly websites to bring in customers — menus, online ordering and reservation links, contact forms, and local search basics so people can find you. Website maintenance and hosting covers updates, backups, security patches, uptime monitoring, and content changes — new menus, hours, photos, and specials. We also handle domain registration, DNS, and SSL certificates, plus professional email on Microsoft 365 or Google Workspace.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
@@ -1049,7 +1240,7 @@
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.section-head, .service, .step, .pos-features li, .why-list li, .why-card, .help-card').forEach(el => {
+    document.querySelectorAll('.section-head, .service, .step, .pos-features li, .why-list li, .why-card, .help-card, .faq-item').forEach(el => {
       el.classList.add('reveal');
       io.observe(el);
     });
