@@ -7,6 +7,8 @@
 <meta name="robots" content="noindex" />
 <meta name="theme-color" content="#0B3D6B" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/assets/brand/starsupport-favicon.svg" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/brand/starsupport-favicon-48.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -47,11 +49,8 @@
     border-bottom: 1px solid rgba(127, 208, 255, 0.15);
   }
   .brand { display: flex; align-items: center; gap: 12px; }
-  .brand img { height: 40px; width: auto; }
-  .brand-text { display: flex; flex-direction: column; line-height: 1; }
-  .brand-name { font-weight: 700; font-size: 21px; letter-spacing: 0.02em; }
-  .brand-name span { color: var(--light-sky); }
-  .brand-sub { font-size: 9.5px; letter-spacing: 0.28em; color: var(--on-dark-dim); margin-top: 5px; }
+  .brand-wide { display: block; height: 40px; width: auto; }
+  .brand-icon { display: none; height: 40px; width: 40px; }
   .nav-call {
     display: inline-flex;
     align-items: center;
@@ -117,23 +116,22 @@
   footer a:hover { color: var(--light-sky); }
   @media (max-width: 600px) {
     .top { padding: 14px 20px; }
-    .brand-sub, .call-num { display: none; }
-    .brand img { height: 34px; }
-    .brand-name { font-size: 18px; }
+    .call-num { display: none; }
     main { padding: 56px 20px; }
     .actions .btn { width: 100%; }
     footer { padding: 20px; }
+  }
+  @media (max-width: 480px) {
+    .brand-wide { display: none; }
+    .brand-icon { display: block; }
   }
 </style>
 </head>
 <body>
   <header class="top">
     <a href="/" class="brand" aria-label="Star Support home">
-      <img src="/assets/mark.png" alt="" width="55" height="40" />
-      <span class="brand-text">
-        <span class="brand-name">STAR <span>SUPPORT</span></span>
-        <span class="brand-sub">IT SUPPORT &amp; SERVICES</span>
-      </span>
+      <img class="brand-wide" src="/assets/brand/starsupport-lockup-wide-dark.svg" alt="" width="1325" height="212" />
+      <img class="brand-icon" src="/assets/brand/starsupport-favicon.svg" alt="" width="40" height="40" />
     </a>
     <a href="tel:+16469460748" class="nav-call">Call <span class="call-num">(646) 946-0748</span></a>
   </header>

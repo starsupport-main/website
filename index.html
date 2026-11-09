@@ -9,6 +9,8 @@
 <meta name="theme-color" content="#0B3D6B" />
 
 <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/assets/brand/starsupport-favicon.svg" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/brand/starsupport-favicon-48.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -18,9 +20,14 @@
 <meta property="og:title" content="Star Support — Small Business IT Support in Hasbrouck Heights, NJ" />
 <meta property="og:description" content="Local IT support for small offices, retail shops and restaurants in Hasbrouck Heights, Bergen County &amp; NYC: help desk, email, Wi-Fi, backups, POS. Available 24/7/365." />
 <meta property="og:url" content="https://www.starsupport.us/" />
-<meta property="og:image" content="https://www.starsupport.us/assets/og-image.png" />
-<meta property="og:image:alt" content="Star Support logo: a blue star with an orbit ring and the words IT Support &amp; Services" />
+<meta property="og:image" content="https://www.starsupport.us/assets/og-image.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Star Support logo: a blue star with an S and the words Star Support, on a star field" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.starsupport.us/assets/og-image.jpg" />
+<meta name="twitter:image:alt" content="Star Support logo: a blue star with an S and the words Star Support, on a star field" />
 
 <script type="application/ld+json">
 {
@@ -31,8 +38,8 @@
   "sameAs": [
     "https://share.google/XVqfafuG1xE9Bqm9b"
   ],
-  "logo": "https://www.starsupport.us/assets/apple-touch-icon.png",
-  "image": "https://www.starsupport.us/assets/og-image.png",
+  "logo": "https://www.starsupport.us/assets/brand/starsupport-avatar-navy-512.png",
+  "image": "https://www.starsupport.us/assets/og-image.jpg",
   "telephone": "+1-646-946-0748",
   "email": "info@starsupport.us",
   "slogan": "Reliable IT, on call.",
@@ -134,13 +141,15 @@
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
   @media (max-width: 600px) { .wrap { padding: 0 20px; } }
 
-  /* ---------- WORDMARK ---------- */
+  /* ---------- LOGO ----------
+     Wide lockup is the one-line icon + STAR SUPPORT wordmark (~250px at 40px tall).
+     Below 640px the bar also holds the phone button and menu, so the header
+     switches to the simplified star+S mark, which is the cut meant for ~40px. */
   .brand { display: flex; align-items: center; gap: 12px; }
-  .brand img { height: 40px; width: auto; }
-  .brand-text { display: flex; flex-direction: column; line-height: 1; }
-  .brand-name { font-weight: 700; font-size: 21px; letter-spacing: 0.02em; color: var(--white); }
-  .brand-name span { color: var(--light-sky); }
-  .brand-sub { font-size: 9.5px; letter-spacing: 0.28em; color: var(--on-dark-dim); margin-top: 5px; }
+  .brand-wide, .brand-icon { display: block; width: auto; }
+  .nav .brand-wide { height: 40px; }
+  .nav .brand-icon { display: none; height: 40px; width: 40px; }
+  .brand-sub { font-size: 9.5px; letter-spacing: 0.28em; color: var(--on-dark-dim); margin-top: 5px; line-height: 1.45; }
 
   /* ---------- NAV ---------- */
   .nav {
@@ -170,15 +179,13 @@
     background: transparent; border: 1px solid rgba(127, 208, 255, 0.3); color: var(--white);
     cursor: pointer; place-items: center;
   }
-  .brand-name, .nav-call { white-space: nowrap; }
+  .nav-call { white-space: nowrap; }
   .nav .brand, .nav-actions { flex-shrink: 0; }
-  /* 861–1099px: tighten the bar so all links, the wordmark and the phone button fit on one line */
+  /* 861–1099px: tighten the bar so the lockup, links and phone button stay on one line */
   @media (min-width: 861px) and (max-width: 1099px) {
     .nav-inner { padding: 14px 20px; gap: 14px; }
     .nav-links { gap: 14px; font-size: 13.5px; }
-    .nav .brand-sub { display: none; }
-    .nav .brand img { height: 34px; }
-    .nav .brand-name { font-size: 18px; }
+    .nav .brand-wide { height: 36px; }
     .nav-call { padding: 10px 14px; font-size: 13.5px; }
   }
   @media (min-width: 861px) and (max-width: 999px) {
@@ -201,10 +208,12 @@
     .nav-links a:last-child { border-bottom: none; }
     .nav.open .nav-links { display: flex; }
   }
+  @media (max-width: 640px) {
+    .nav .brand-wide { display: none; }
+    .nav .brand-icon { display: block; }
+  }
   @media (max-width: 440px) {
-    .brand-sub { display: none; }
-    .brand img { height: 34px; }
-    .brand-name { font-size: 18px; }
+    .nav .brand-icon { height: 36px; width: 36px; }
     .nav-call .call-num { display: none; }
   }
 
@@ -435,7 +444,7 @@
     border-radius: 16px;
     position: relative; overflow: hidden;
   }
-  .why-card-mark { height: 56px; width: auto; margin-bottom: 22px; }
+  .why-card-mark { height: 72px; width: 72px; margin-bottom: 22px; }
   .why-card-quote { font-size: 24px; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; margin-bottom: 22px; }
   .why-card-meta { font-size: 12.5px; color: var(--on-dark-dim); letter-spacing: 0.18em; text-transform: uppercase; }
   @media (max-width: 920px) { .why-grid { grid-template-columns: 1fr; gap: 44px; } }
@@ -515,7 +524,9 @@
   .footer-meta > * { padding: 8px 0; line-height: 1.4; }
   .footer-meta a { color: var(--white); }
   .footer-meta a:hover { color: var(--light-sky); }
-  footer .brand-sub { display: block; margin-top: 7px; }
+  footer .brand { flex-direction: column; align-items: flex-start; gap: 8px; max-width: 100%; min-width: 0; }
+  footer .brand-wide { height: 32px; }
+  footer .brand-sub { display: block; margin-top: 0; }
 
   /* ---------- REVEAL (only when JS runs; respects reduced motion) ---------- */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
@@ -536,11 +547,8 @@
 <nav class="nav" aria-label="Main">
   <div class="nav-inner">
     <a href="#top" class="brand" aria-label="Star Support home">
-      <img src="assets/mark.png" alt="" width="55" height="40" />
-      <span class="brand-text">
-        <span class="brand-name">STAR <span>SUPPORT</span></span>
-        <span class="brand-sub">IT SUPPORT &amp; SERVICES</span>
-      </span>
+      <img class="brand-wide" src="/assets/brand/starsupport-lockup-wide-dark.svg" alt="" width="1325" height="212" />
+      <img class="brand-icon" src="/assets/brand/starsupport-favicon.svg" alt="" width="40" height="40" />
     </a>
     <div class="nav-links" id="nav-links">
       <a href="#services">Services</a>
@@ -834,7 +842,7 @@
       </ul>
 
       <aside class="why-card">
-        <img class="why-card-mark" src="assets/mark.png" alt="" width="77" height="56" />
+        <img class="why-card-mark" src="/assets/brand/starsupport-icon.svg" alt="" width="72" height="72" />
         <p class="why-card-quote">The right IT partner doesn't just fix things — they make sure you don't notice the things that would have broken.</p>
         <div class="why-card-meta">Reliable IT, on call</div>
       </aside>
@@ -951,8 +959,8 @@
 <footer>
   <div class="wrap footer-inner">
     <a href="#top" class="brand" aria-label="Star Support — back to top">
-      <img src="assets/mark.png" alt="" width="44" height="32" style="height:32px" />
-      <span class="brand-text"><span class="brand-name" style="font-size:17px">STAR <span>SUPPORT</span></span><span class="brand-sub">SERVING HASBROUCK HEIGHTS, BERGEN COUNTY, NJ &amp; NEW YORK CITY</span></span>
+      <img class="brand-wide" src="/assets/brand/starsupport-lockup-wide-dark.svg" alt="" width="1325" height="212" />
+      <span class="brand-sub">SERVING HASBROUCK HEIGHTS, BERGEN COUNTY, NJ &amp; NEW YORK CITY</span>
     </a>
     <div class="footer-meta">
       <span>© <span id="year">2026</span> Star Support LLC</span>
